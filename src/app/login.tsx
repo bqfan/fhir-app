@@ -1,4 +1,3 @@
-import { Env } from '@env';
 import { useRouter } from 'expo-router';
 import React from 'react';
 
@@ -10,9 +9,6 @@ import { useAuth } from '@/lib';
 export default function Login() {
   const router = useRouter();
   const signIn = useAuth.use.signIn();
-
-  console.log(Env.FHIR_SERVERS.medplum.baseUrl); // http://localhost:3000 (dev)
-  console.log(Env.FHIR_SERVERS.aidbox.clientId);
 
   const onSubmit: LoginFormProps['onSubmit'] = (data) => {
     console.log(data);

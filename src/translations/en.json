@@ -15,6 +15,11 @@
     "more": "More",
     "privacy": "Privacy Policy",
     "rate": "Rate",
+    "server": {
+      "aidbox": "AidBox",
+      "medplum": "Medplum",
+      "title": "Server"
+    },
     "share": "Share",
     "support": "Support",
     "support_us": "Support Us",
