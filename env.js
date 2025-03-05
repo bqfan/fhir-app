@@ -70,6 +70,53 @@ const withEnvSuffix = (name) => {
  *
  */
 
+// Zod schema for FHIR server configuration
+const FhirServerSchema = z.object({
+  baseUrl: z.string().refine(
+    (url) => {
+      // Allow HTTP/HTTPS but ensure valid URL structure
+      const isProd = process.env.NODE_ENV === 'production';
+      const isValidProtocol =
+        url.startsWith('http://') || url.startsWith('https://');
+      const isValidFormat =
+        /^https?:\/\/(www\.)?[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+/.test(url);
+
+      if (isProd) {
+        return url.startsWith('https://') && isValidFormat;
+      }
+      return isValidProtocol && isValidFormat;
+    },
+    {
+      message:
+        process.env.NODE_ENV === 'production'
+          ? 'Must be a valid HTTPS URL in production'
+          : 'Must be a valid HTTP/HTTPS URL',
+    }
+  ),
+  clientId: z.string().min(20, 'Client ID must be at least 20 characters'),
+});
+
+// FHIR servers configuration schema
+const FhirServersSchema = z.object({
+  medplum: FhirServerSchema,
+  aidbox: FhirServerSchema,
+});
+
+// Build from environment variables
+const _fhirServersEnv = {
+  medplum: {
+    baseUrl: process.env.MEDPLUM_BASE_URL,
+    clientId: process.env.MEDPLUM_CLIENT_ID,
+  },
+  aidbox: {
+    baseUrl: process.env.AIDBOX_BASE_URL,
+    clientId: process.env.AIDBOX_CLIENT_ID,
+  },
+};
+
+// Parse and validate
+const fhirServers = FhirServersSchema.parse(_fhirServersEnv);
+
 const client = z.object({
   APP_ENV: z.enum(['development', 'staging', 'production']),
   NAME: z.string(),
@@ -80,8 +127,7 @@ const client = z.object({
 
   // ADD YOUR CLIENT ENV VARS HERE
   API_URL: z.string(),
-  VAR_NUMBER: z.number(),
-  VAR_BOOL: z.boolean(),
+  FHIR_SERVERS: FhirServersSchema,
 });
 
 const buildTime = z.object({
@@ -104,8 +150,7 @@ const _clientEnv = {
 
   // ADD YOUR ENV VARS HERE TOO
   API_URL: process.env.API_URL,
-  VAR_NUMBER: Number(process.env.VAR_NUMBER),
-  VAR_BOOL: process.env.VAR_BOOL === 'true',
+  FHIR_SERVERS: fhirServers,
 };
 
 /**
