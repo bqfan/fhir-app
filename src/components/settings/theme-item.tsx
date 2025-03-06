@@ -1,3 +1,4 @@
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import React from 'react';
 
 import type { OptionType } from '@/components/ui';
@@ -33,10 +34,19 @@ export const ThemeItem = () => {
     [selectedTheme, themes]
   );
 
+  const color = selectedTheme === 'dark' ? '#fff' : '#000';
+
   return (
     <>
       <Item
         text="settings.theme.title"
+        icon={
+          <MaterialCommunityIcons
+            name="theme-light-dark"
+            size={18}
+            color={color}
+          />
+        }
         value={theme?.label}
         onPress={modal.present}
       />

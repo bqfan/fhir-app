@@ -1,8 +1,9 @@
+import { MaterialIcons } from '@expo/vector-icons';
 import * as React from 'react';
 
 import type { OptionType } from '@/components/ui';
 import { Options, useModal } from '@/components/ui';
-import { useSelectedLanguage } from '@/lib';
+import { useSelectedLanguage, useSelectedTheme } from '@/lib';
 import { translate } from '@/lib';
 import type { Language } from '@/lib/i18n/resources';
 
@@ -32,10 +33,15 @@ export const LanguageItem = () => {
     [language, langs]
   );
 
+  const { selectedTheme } = useSelectedTheme();
+
+  const color = selectedTheme === 'dark' ? '#fff' : '#000';
+
   return (
     <>
       <Item
         text="settings.language"
+        icon={<MaterialIcons name="language" size={18} color={color} />}
         value={selectedLanguage?.label}
         onPress={modal.present}
       />

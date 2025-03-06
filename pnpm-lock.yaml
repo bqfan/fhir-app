@@ -38,6 +38,9 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.52.1
         version: 5.52.1(react@18.3.1)
+      MaterialCommunityIcons:
+        specifier: link:@expo/vector-icons/MaterialCommunityIcons
+        version: link:@expo/vector-icons/MaterialCommunityIcons
       app-icon-badge:
         specifier: ^0.1.2
         version: 0.1.2
