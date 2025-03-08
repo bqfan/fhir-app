@@ -5,6 +5,7 @@ export * from './github';
 export * from './home';
 export * from './language';
 export * from './rate';
+export * from './server';
 export * from './settings';
 export * from './share';
 export * from './style';

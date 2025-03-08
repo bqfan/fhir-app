@@ -15,6 +15,12 @@
     "more": "More",
     "privacy": "Privacy Policy",
     "rate": "Rate",
+    "server": {
+      "aidbox": "AidBox",
+      "hapi-fhir": "HAPI FHIR",
+      "medplum": "Medplum",
+      "title": "Server"
+    },
     "share": "Share",
     "support": "Support",
     "support_us": "Support Us",
