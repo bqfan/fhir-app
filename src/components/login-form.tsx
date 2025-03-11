@@ -6,10 +6,10 @@ import { KeyboardAvoidingView } from 'react-native-keyboard-controller';
 import * as z from 'zod';
 
 import { ControlledInput, Text, View } from '@/components/ui';
+import { Image } from '@/components/ui';
 import { Button, ButtonText } from '@/components/ui/button';
 
 const schema = z.object({
-  name: z.string().optional(),
   email: z
     .string({
       required_error: 'Email is required',
@@ -40,26 +40,20 @@ export const LoginForm = ({ onSubmit = () => {} }: LoginFormProps) => {
     >
       <View className="flex-1 justify-center p-4">
         <View className="items-center justify-center">
+          <Image
+            className="h-32 w-96 overflow-hidden rounded-t-xl"
+            source={require('../../assets/images/medplum-logo.png')}
+          />
           <Text
             testID="form-title"
             className="pb-6 text-center text-4xl font-bold"
           >
             Sign In
           </Text>
-
           <Text className="mb-6 max-w-xs text-center text-gray-500">
-            Welcome! 👋 This is a demo login screen! Feel free to use any email
-            and password to sign in and try it out.
+            Welcome! 👋 Please login with your Medplum account.
           </Text>
         </View>
-
-        <ControlledInput
-          testID="name"
-          control={control}
-          name="name"
-          label="Name"
-        />
-
         <ControlledInput
           testID="email-input"
           control={control}
