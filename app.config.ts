@@ -7,16 +7,8 @@ import { ClientEnv, Env } from './env';
 const appIconBadgeConfig: AppIconBadgeConfig = {
   enabled: Env.APP_ENV !== 'production',
   badges: [
-    {
-      text: Env.APP_ENV,
-      type: 'banner',
-      color: 'white',
-    },
-    {
-      text: Env.VERSION.toString(),
-      type: 'ribbon',
-      color: 'white',
-    },
+    { text: Env.APP_ENV, type: 'banner', color: 'white' },
+    { text: Env.VERSION.toString(), type: 'ribbon', color: 'white' },
   ],
 };
 
@@ -32,9 +24,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   icon: './assets/images/fhir-icon.png',
   userInterfaceStyle: 'automatic',
   newArchEnabled: true,
-  updates: {
-    fallbackToCacheTimeout: 0,
-  },
+  updates: { fallbackToCacheTimeout: 0 },
   assetBundlePatterns: ['**/*'],
   ios: {
     supportsTablet: true,
@@ -43,44 +33,29 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       usesNonExemptEncryption: false, // Avoid the export compliance warning on the app store
     },
   },
-  experiments: {
-    typedRoutes: true,
-  },
+  experiments: { typedRoutes: true },
   android: {
     adaptiveIcon: {
       foregroundImage: './assets/images/fhir-adaptive-icon.png',
-      backgroundColor: '#2E3C4B',
+      backgroundColor: '#FFFFFF',
     },
     package: Env.PACKAGE,
   },
-  web: {
-    favicon: './assets/images/fhir-favicon.png',
-    bundler: 'metro',
-  },
+  web: { favicon: './assets/images/fhir-favicon.png', bundler: 'metro' },
   plugins: [
     [
       'expo-splash-screen',
       {
-        backgroundColor: '#2E3C4B',
+        backgroundColor: '#FFFFFF',
         image: './assets/images/fhir-splash-icon.png',
         imageWidth: 150,
       },
     ],
-    [
-      'expo-font',
-      {
-        fonts: ['./assets/fonts/Inter.ttf'],
-      },
-    ],
+    ['expo-font', { fonts: ['./assets/fonts/Inter.ttf'] }],
     'expo-localization',
     'expo-router',
     ['app-icon-badge', appIconBadgeConfig],
     ['react-native-edge-to-edge'],
   ],
-  extra: {
-    ...ClientEnv,
-    eas: {
-      projectId: Env.EAS_PROJECT_ID,
-    },
-  },
+  extra: { ...ClientEnv, eas: { projectId: Env.EAS_PROJECT_ID } },
 });

@@ -15,7 +15,7 @@ FHIR React Native App </h1>
 
 ## 👋 Quick start
 
-Clone the repo to your machine and install deps :
+Clone the repo to your machine and install deps:
 
 ```sh
 git clone https://github.com/bqfan/fhir-app
@@ -23,6 +23,17 @@ git clone https://github.com/bqfan/fhir-app
 cd ./fhir-app
 
 pnpm install
+```
+
+Set MEDPLUM_CLIENT_ID in shell:
+MEDPLUM_CLIENT_ID can be created in app.medplum.com
+
+```sh
+vim ~/.zshrc
+```
+
+```sh
+export MEDPLUM_CLIENT_ID=xxxxxxxxx
 ```
 
 To run the app on ios
@@ -36,6 +47,10 @@ To run the app on Android
 ```sh
 pnpm android
 ```
+
+## 📸 Screen shots
+
+<img src="/assets/images/screenshots/splash-screen.png" alt="splash screen" width=30%><img src="/assets/images/screenshots/onboarding.png" alt="onboarding screen" width=30%><img src="/assets/images/screenshots/login-screen.png" alt="login screen" width=30%><img src="/assets/images/screenshots/patient-list.png" alt="patient list" width=30%><img src="/assets/images/screenshots/patient-screen.png" alt="patient screen" width=30%><img src="/assets/images/screenshots/themes.png" alt="themes" width=30%><img src="/assets/images/screenshots/dark-theme.png" alt="dark-theme" width=30%>
 
 ## ✍️ Documentation
 

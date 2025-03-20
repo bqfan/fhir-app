@@ -20,9 +20,7 @@ const path = require('path');
 const APP_ENV = process.env.APP_ENV ?? 'development';
 const envPath = path.resolve(__dirname, `.env.${APP_ENV}`);
 
-require('dotenv').config({
-  path: envPath,
-});
+require('dotenv').config({ path: envPath });
 
 /**
  * 2nd part: Define some static variables for the app
@@ -79,16 +77,14 @@ const client = z.object({
   VERSION: z.string(),
 
   // ADD YOUR CLIENT ENV VARS HERE
-  API_URL: z.string(),
-  VAR_NUMBER: z.number(),
-  VAR_BOOL: z.boolean(),
+  MEDPLUM_BASE_URL: z.string(),
+  MEDPLUM_CLIENT_ID: z.string(),
 });
 
 const buildTime = z.object({
   EXPO_ACCOUNT_OWNER: z.string(),
   EAS_PROJECT_ID: z.string(),
   // ADD YOUR BUILD TIME ENV VARS HERE
-  SECRET_KEY: z.string(),
 });
 
 /**
@@ -103,9 +99,8 @@ const _clientEnv = {
   VERSION: packageJSON.version,
 
   // ADD YOUR ENV VARS HERE TOO
-  API_URL: process.env.API_URL,
-  VAR_NUMBER: Number(process.env.VAR_NUMBER),
-  VAR_BOOL: process.env.VAR_BOOL === 'true',
+  MEDPLUM_BASE_URL: process.env.MEDPLUM_BASE_URL,
+  MEDPLUM_CLIENT_ID: process.env.MEDPLUM_CLIENT_ID,
 };
 
 /**
@@ -115,7 +110,6 @@ const _buildTimeEnv = {
   EXPO_ACCOUNT_OWNER,
   EAS_PROJECT_ID,
   // ADD YOUR ENV VARS HERE TOO
-  SECRET_KEY: process.env.SECRET_KEY,
 };
 
 /**
@@ -124,10 +118,7 @@ const _buildTimeEnv = {
  * If the validation fails we throw an error and log the error to the console with a detailed message about missed variables
  * If the validation passes we export the merged and parsed env variables to be used in the app.config.ts file as well as a ClientEnv object to be used in the client-side code
  **/
-const _env = {
-  ..._clientEnv,
-  ..._buildTimeEnv,
-};
+const _env = { ..._clientEnv, ..._buildTimeEnv };
 
 const merged = buildTime.merge(client);
 const parsed = merged.safeParse(_env);
@@ -148,8 +139,4 @@ if (parsed.success === false) {
 const Env = parsed.data;
 const ClientEnv = client.parse(_clientEnv);
 
-module.exports = {
-  Env,
-  ClientEnv,
-  withEnvSuffix,
-};
+module.exports = { Env, ClientEnv, withEnvSuffix };
