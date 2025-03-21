@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02ECE8CD430BB9410DDB0CCC /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 34E0B45D287CDBCED8086177 /* PrivacyInfo.xcprivacy */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		1CEE135227B04E7C98F11A5A /* Inter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA5FE46C887E404A9FF17F3B /* Inter.ttf */; };
-		3315E3B5585D4DE897B1BB49 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9CD2D6C80443288EFB06EA /* noop-file.swift */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
+		8FE75D01BF524104B4C6DFA1 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2390F8A1B7B04785BB25537D /* noop-file.swift */; };
 		96905EF65AED1B983A6B3ABC /* libPods-FHIRApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-FHIRApp.a */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
-		BE7E6CA70C4A8B3C1E8E5B6D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 140226E06C6C6C51BB0114E2 /* PrivacyInfo.xcprivacy */; };
+		E8B93438FE654463B4B5BC20 /* Inter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1521492DA4CE49E6B112FB16 /* Inter.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,15 +26,15 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FHIRApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FHIRApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FHIRApp/main.m; sourceTree = "<group>"; };
-		140226E06C6C6C51BB0114E2 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = FHIRApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		4C9CD2D6C80443288EFB06EA /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "FHIRApp/noop-file.swift"; sourceTree = "<group>"; };
+		1521492DA4CE49E6B112FB16 /* Inter.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Inter.ttf; path = ../assets/fonts/Inter.ttf; sourceTree = "<group>"; };
+		201FCEAD29384D5A8E95BA2C /* FHIRApp-Bridging-Header.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "FHIRApp-Bridging-Header.h"; path = "FHIRApp/FHIRApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		2390F8A1B7B04785BB25537D /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "FHIRApp/noop-file.swift"; sourceTree = "<group>"; };
+		34E0B45D287CDBCED8086177 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = FHIRApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		58EEBF8E8E6FB1BC6CAF49B5 /* libPods-FHIRApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FHIRApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2E3173556A471DD304B334 /* Pods-FHIRApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FHIRApp.debug.xcconfig"; path = "Target Support Files/Pods-FHIRApp/Pods-FHIRApp.debug.xcconfig"; sourceTree = "<group>"; };
 		7A4D352CD337FB3A3BF06240 /* Pods-FHIRApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FHIRApp.release.xcconfig"; path = "Target Support Files/Pods-FHIRApp/Pods-FHIRApp.release.xcconfig"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = FHIRApp/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
-		CB84E9CA4B5740B0BA4B8C58 /* FHIRApp-Bridging-Header.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "FHIRApp-Bridging-Header.h"; path = "FHIRApp/FHIRApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		EA5FE46C887E404A9FF17F3B /* Inter.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Inter.ttf; path = ../assets/fonts/Inter.ttf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-FHIRApp/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,9 +61,9 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				4C9CD2D6C80443288EFB06EA /* noop-file.swift */,
-				CB84E9CA4B5740B0BA4B8C58 /* FHIRApp-Bridging-Header.h */,
-				140226E06C6C6C51BB0114E2 /* PrivacyInfo.xcprivacy */,
+				2390F8A1B7B04785BB25537D /* noop-file.swift */,
+				201FCEAD29384D5A8E95BA2C /* FHIRApp-Bridging-Header.h */,
+				34E0B45D287CDBCED8086177 /* PrivacyInfo.xcprivacy */,
 			);
 			name = FHIRApp;
 			sourceTree = "<group>";
@@ -93,7 +93,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D65327D7A22EEC0BE12398D9 /* Pods */,
 				D7E4C46ADA2E9064B798F356 /* ExpoModulesProviders */,
-				F45E64AE5FE2490DA3939494 /* Resources */,
+				C022646846174D749C714173 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -125,6 +125,15 @@
 			path = FHIRApp/Supporting;
 			sourceTree = "<group>";
 		};
+		C022646846174D749C714173 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1521492DA4CE49E6B112FB16 /* Inter.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		D65327D7A22EEC0BE12398D9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,15 +151,6 @@
 			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
-		F45E64AE5FE2490DA3939494 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				EA5FE46C887E404A9FF17F3B /* Inter.ttf */,
-			);
-			name = Resources;
-			path = "";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,13 +159,13 @@
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "FHIRApp" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				412D6A9ECE9E8B36A902594A /* [Expo] Configure project */,
+				59526D5349A8F037ED5FA59D /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				2DB780F9B17F8323C999414F /* [CP] Embed Pods Frameworks */,
+				08F7468C2EB45141CE7320FB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,8 +215,8 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				1CEE135227B04E7C98F11A5A /* Inter.ttf in Resources */,
-				BE7E6CA70C4A8B3C1E8E5B6D /* PrivacyInfo.xcprivacy in Resources */,
+				E8B93438FE654463B4B5BC20 /* Inter.ttf in Resources */,
+				02ECE8CD430BB9410DDB0CCC /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +260,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2DB780F9B17F8323C999414F /* [CP] Embed Pods Frameworks */ = {
+		08F7468C2EB45141CE7320FB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -278,7 +278,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FHIRApp/Pods-FHIRApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		412D6A9ECE9E8B36A902594A /* [Expo] Configure project */ = {
+		59526D5349A8F037ED5FA59D /* [Expo] Configure project */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -353,7 +353,7 @@
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */,
-				3315E3B5585D4DE897B1BB49 /* noop-file.swift in Sources */,
+				8FE75D01BF524104B4C6DFA1 /* noop-file.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

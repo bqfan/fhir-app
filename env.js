@@ -38,7 +38,7 @@ const BUNDLE_ID = 'com.fhir-app'; // ios bundle id
 const PACKAGE = 'com.fhir_app'; // android package name
 const NAME = 'FHIR App'; // app name
 const EXPO_ACCOUNT_OWNER = 'bqfan'; // expo account owner
-const EAS_PROJECT_ID = 'c8a170c9-ee74-4c42-883e-cd186678b462'; // eas project id
+const EAS_PROJECT_ID = process.env.EAS_PROJECT_ID; // eas project id
 const SCHEME = 'fhir-app'; // app scheme
 
 /**
@@ -79,7 +79,6 @@ const client = z.object({
   VERSION: z.string(),
 
   // ADD YOUR CLIENT ENV VARS HERE
-  API_URL: z.string(),
   MEDPLUM_BASE_URL: z.string(),
   MEDPLUM_CLIENT_ID: z.string(),
 });
@@ -102,7 +101,6 @@ const _clientEnv = {
   VERSION: packageJSON.version,
 
   // ADD YOUR ENV VARS HERE TOO
-  API_URL: process.env.API_URL,
   MEDPLUM_BASE_URL: process.env.MEDPLUM_BASE_URL,
   MEDPLUM_CLIENT_ID: process.env.MEDPLUM_CLIENT_ID,
 };
