@@ -219,7 +219,7 @@ const PatientScreen = ({ patient, reports }: PatientScreenProps) => {
                           return (
                             <Text
                               key={uuidv4()}
-                              className={`text-xs font-semibold ${text_color}`}
+                              className={`text-xs font-semibold ${text_color ?? 'text-gray-900'}`}
                             >
                               {obs?.valueQuantity?.value
                                 ?.toFixed(2)
