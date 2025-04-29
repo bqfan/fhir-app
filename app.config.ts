@@ -28,6 +28,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   scheme: Env.SCHEME,
   slug: 'fhir-react-native',
   version: Env.VERSION.toString(),
+  runtimeVersion: '52.0.0',
   orientation: 'portrait',
   icon: './assets/images/fhir-icon.png',
   userInterfaceStyle: 'automatic',

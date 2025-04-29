@@ -81,7 +81,7 @@
     "react-error-boundary": "^4.0.13",
     "react-hook-form": "^7.53.0",
     "react-i18next": "^15.0.1",
-    "react-native": "0.76.7",
+    "react-native": "0.76.9",
     "react-native-edge-to-edge": "^1.1.2",
     "react-native-flash-message": "^0.4.2",
     "react-native-gesture-handler": "~2.20.2",
@@ -103,7 +103,7 @@
     "@babel/core": "^7.26.0",
     "@commitlint/cli": "^19.2.2",
     "@commitlint/config-conventional": "^19.2.2",
-    "@dev-plugins/react-query": "^0.0.7",
+    "@dev-plugins/react-query": "^0.2.0",
     "@expo/config": "~10.0.3",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react-native": "^12.7.2",
@@ -154,7 +154,8 @@
       "reactNativeDirectoryCheck": {
         "listUnknownPackages": false,
         "exclude": [
-          "react-native-restart"
+          "react-native-restart",
+          "i18next"
         ]
       }
     },
