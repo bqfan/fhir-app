@@ -43,6 +43,15 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
+        name="practitioners"
+        options={{
+          title: 'Practitioners',
+          tabBarIcon: ({ color }) => <CrowdPatientIcon color={color} />,
+          tabBarButtonTestID: 'practitioners-tab',
+        }}
+      />
+
+      <Tabs.Screen
         name="settings"
         options={{
           title: 'Settings',
