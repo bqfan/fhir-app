@@ -1,6 +1,7 @@
 import { useMedplum } from '@medplum/react-hooks';
 import { FlashList } from '@shopify/flash-list';
 import { useRouter } from 'expo-router';
+import type { Organization } from 'fhir/r4';
 import React, { useEffect, useState } from 'react';
 import { Pressable, TextInput, View } from 'react-native';
 
@@ -11,17 +12,17 @@ import { Text } from '@/components/ui/text';
 /* eslint-disable max-lines-per-function */
 const PractitionerList = () => {
   const router = useRouter();
-  const [practitioners, setPractitioners] = useState<
+  const [organizations, setOrganizations] = useState<
     {
       id: string;
-      name?: { given?: string[]; family?: string }[];
-      gender: string;
+      name: string;
+      identifier: { value: string }[];
       telecom: unknown;
     }[]
   >([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [practitionersPerPage] = useState(30);
+  const [organizationsPerPage] = useState(30);
   const [searchTerm, setSearchTerm] = useState('');
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('');
   const medplum = useMedplum();
@@ -39,58 +40,58 @@ const PractitionerList = () => {
   }, [searchTerm]);
 
   useEffect(() => {
-    const fetchPractitioners = async () => {
+    const fetchOrganizations = async () => {
       setLoading(true);
       try {
         const params: Record<string, any> = {
-          _count: practitionersPerPage,
-          _offset: (currentPage - 1) * practitionersPerPage,
+          _count: organizationsPerPage,
+          _offset: (currentPage - 1) * organizationsPerPage,
         };
 
         if (debouncedSearchTerm) {
           params.name = debouncedSearchTerm;
         }
 
-        const response = await medplum.searchResources('Practitioner', params);
-        setPractitioners(
-          response.map((practitioner: unknown) => {
-            const p = practitioner as {
+        const response = await medplum.searchResources('Organization', params);
+        setOrganizations(
+          response.map((organization: Organization) => {
+            const o = organization as {
               id: string;
-              name?: { given?: string[]; family?: string }[];
+              identifier?: { value: string }[];
+              name?: string;
               telecom?: unknown;
-              gender?: string;
             };
             return {
-              id: p.id,
-              name: p.name,
-              telecom: p.telecom || 'N/A',
-              gender: p.gender || 'N/A',
+              id: o.id,
+              name: o.name || 'N/A',
+              identifier: o.identifier || [],
+              telecom: o.telecom || 'N/A',
             };
           })
         );
       } catch (error) {
-        console.error('Error fetching practitioners:', error);
+        console.error('Error fetching organizations:', error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchPractitioners();
-  }, [currentPage, practitionersPerPage, medplum, debouncedSearchTerm]);
+    fetchOrganizations();
+  }, [currentPage, organizationsPerPage, medplum, debouncedSearchTerm]);
 
-  const renderPractitionerItem = ({
+  const renderOrganizationItem = ({
     item,
     index,
   }: {
     item: {
       id: string;
-      name?: { given?: string[]; family?: string }[];
+      identifier: { value: string }[];
+      name: string;
       telecom: unknown;
-      gender: string;
     };
     index: number;
   }) => (
-    <Pressable onPress={() => router.push(`/(app)/practitioner/${item.id}`)}>
+    <Pressable onPress={() => router.push(`/(app)/organization/${item.id}`)}>
       <View
         className={`flex-row items-center p-3 ${
           index % 2 === 0
@@ -104,19 +105,19 @@ const PractitionerList = () => {
             numberOfLines={1}
             className="truncate text-sm text-gray-700 dark:text-gray-300"
           >
-            {item.name?.[0]?.given?.join(' ')} {item.name?.[0]?.family}
+            {item?.name}
           </Text>
         </View>
 
-        <View className="w-1/5 border-r border-gray-300 px-2 dark:border-gray-600">
+        <View className="w-2/5 border-r border-gray-300 px-2 dark:border-gray-600">
           <Text
             numberOfLines={1}
             className="truncate text-sm text-gray-700 dark:text-gray-300"
           >
-            {item.gender}
+            {item.identifier[0]?.value || 'N/A'}
           </Text>
         </View>
-        <View className="w-2/5 border-r border-gray-300 px-2 dark:border-gray-600">
+        <View className="w-1/5 border-r border-gray-300 px-2 dark:border-gray-600">
           <Text
             numberOfLines={1}
             className="truncate text-sm text-gray-700 dark:text-gray-300"
@@ -169,28 +170,28 @@ const PractitionerList = () => {
                 Name
               </Text>
             </View>
-            <View className="w-1/5 border-r border-gray-100 px-2 dark:border-gray-700">
+            <View className="w-2/5 border-r border-gray-100 px-2 dark:border-gray-700">
               <Text className="truncate text-sm font-bold text-gray-900 dark:text-gray-100">
-                Gender
+                Identifier
               </Text>
             </View>
-            <View className="w-2/6 px-1">
+            <View className="w-1/5 px-1">
               <Text className="text-sm font-bold text-gray-900 dark:text-gray-100">
-                Telecom
+                Phone
               </Text>
             </View>
           </View>
 
           {/* FlashList for Performance */}
           <FlashList
-            data={practitioners}
-            renderItem={renderPractitionerItem}
+            data={organizations}
+            renderItem={renderOrganizationItem}
             keyExtractor={(item) => item.id}
             estimatedItemSize={50}
             ListEmptyComponent={
               !loading && (
                 <Text className="p-4 text-center text-gray-500 dark:text-gray-400">
-                  No practitioner found
+                  No organization found
                   {debouncedSearchTerm && ` matching "${debouncedSearchTerm}"`}
                 </Text>
               )
@@ -211,7 +212,7 @@ const PractitionerList = () => {
             <Button
               onPress={handleNextPage}
               isDisabled={
-                practitioners.length < practitionersPerPage || loading
+                organizations.length < organizationsPerPage || loading
               }
             >
               <ButtonText>Next</ButtonText>

@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unstable-nested-components */
 import {
   faGears,
+  faHospital,
   faHospitalUser,
   faUserDoctor,
 } from '@fortawesome/free-solid-svg-icons';
@@ -57,6 +58,16 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="organizations"
+        options={{
+          title: 'Organizations',
+          tabBarIcon: ({ color }) => (
+            <FontAwesomeIcon icon={faHospital} size={28} color={color} />
+          ),
+          tabBarButtonTestID: 'organizations-tab',
+        }}
+      />
+      <Tabs.Screen
         name="settings"
         options={{
           title: 'Settings',
@@ -72,9 +83,14 @@ export default function TabLayout() {
         name="patient/[patientId]/index"
         options={{ href: null, headerShown: false }}
       />
-      {/* hide patient screen */}
+      {/* hide practitioner screen */}
       <Tabs.Screen
         name="practitioner/[practitionerId]/index"
+        options={{ href: null, headerShown: false }}
+      />
+      {/* hide organizations screen */}
+      <Tabs.Screen
+        name="organization/[organizationId]/index"
         options={{ href: null, headerShown: false }}
       />
     </Tabs>

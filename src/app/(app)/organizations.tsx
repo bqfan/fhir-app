@@ -1,13 +1,13 @@
 import React from 'react';
 
-import PractitionerList from '@/components/practitioner-list';
+import OrganizationList from '@/components/organization-list';
 import { FocusAwareStatusBar, View } from '@/components/ui';
 
-export default function Practitioners() {
+export default function Organizations() {
   return (
     <View className="flex-1 ">
       <FocusAwareStatusBar />
-      <PractitionerList />
+      <OrganizationList />
     </View>
   );
 }
