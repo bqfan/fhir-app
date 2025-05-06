@@ -53,7 +53,6 @@ const PractitionerList = () => {
         }
 
         const response = await medplum.searchResources('Organization', params);
-        console.log(response[0]);
         setOrganizations(
           response.map((organization: Organization) => {
             const o = organization as {
@@ -92,7 +91,7 @@ const PractitionerList = () => {
     };
     index: number;
   }) => (
-    <Pressable onPress={() => router.push(`/(app)/practitioner/${item.id}`)}>
+    <Pressable onPress={() => router.push(`/(app)/organization/${item.id}`)}>
       <View
         className={`flex-row items-center p-3 ${
           index % 2 === 0
