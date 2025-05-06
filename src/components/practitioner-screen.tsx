@@ -83,7 +83,7 @@ const PractitionerScreen = ({ practitioner }: PractitionerScreenProps) => {
             </Text>
           </View>
 
-          {/* Phone */}
+          {/* Email */}
           <View className="w-1/2 pl-2">
             <Text className="text-sm text-gray-500 dark:text-gray-400">
               Email

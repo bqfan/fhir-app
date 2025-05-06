@@ -1,31 +1,31 @@
 // src/app/(app)/patient/[patientId]/index.tsx
 import { useMedplum } from '@medplum/react-hooks';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import type { Practitioner } from 'fhir/r4';
+import type { Organization } from 'fhir/r4';
 import { useEffect, useState } from 'react';
 import { SafeAreaView, View } from 'react-native';
 
-import PractitionerScreen from '@/components/practitioner-screen';
+import OrganizationScreen from '@/components/organization-screen';
 import { Button, ButtonText } from '@/components/ui/button';
 import { Spinner } from '@/components/ui/spinner';
 
 /* eslint-disable max-lines-per-function */
-export default function PractitionerDetails() {
-  const { practitionerId } = useLocalSearchParams();
+export default function OrganizationDetails() {
+  const { organizationId } = useLocalSearchParams();
   const medplum = useMedplum();
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [_, setError] = useState<string>();
-  const [practitioner, setPractitioner] = useState<Practitioner>();
+  const [organization, setOrganization] = useState<Organization>();
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        const pr = await medplum.readResource(
-          'Practitioner',
-          practitionerId as string
+        const org = await medplum.readResource(
+          'Organization',
+          organizationId as string
         );
-        setPractitioner(pr as Practitioner); // Explicit type assertion
+        setOrganization(org as Organization); // Explicit type assertion
         setError(undefined);
       } catch (err) {
         console.error('Error loading data:', err);
@@ -36,7 +36,7 @@ export default function PractitionerDetails() {
     };
 
     loadData();
-  }, [practitionerId, medplum]);
+  }, [organizationId, medplum]);
 
   if (loading) return <Spinner />;
 
@@ -48,17 +48,17 @@ export default function PractitionerDetails() {
           <Button
             //variant="ghost"
             className="self-start"
-            onPress={() => router.push('/practitioners')}
+            onPress={() => router.push('/organizationss')}
           >
-            <ButtonText>← Back to Pratitioners</ButtonText>
+            <ButtonText>← Back to Organizations</ButtonText>
           </Button>
         </View>
 
-        {practitioner ? (
-          <PractitionerScreen practitioner={practitioner} />
+        {organization ? (
+          <OrganizationScreen organization={organization} />
         ) : (
           <View className="flex-1 items-center justify-center">
-            No practitioner selected
+            No organization selected
           </View>
         )}
       </View>
