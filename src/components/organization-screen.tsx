@@ -1,13 +1,6 @@
 import type { Organization } from 'fhir/r4';
 import { ScrollView, View } from 'react-native';
-
 import { Text } from '@/components/ui/text';
-
-// const formatDate = (dateString: string | null) => {
-//   if (!dateString) return 'N/A';
-//   const date = new Date(dateString);
-//   return `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getFullYear()}`;
-// };
 
 interface OrganizationScreenProps {
   organization: Organization;
@@ -41,7 +34,7 @@ const OrganizationScreen = ({ organization }: OrganizationScreenProps) => {
             <Text className="text-base dark:text-gray-300">
               {organization?.identifier?.[0]?.value || 'N/A'}
             </Text>
-          </View>
+          </View> */}
 
           {/* Type */}
           <View className="w-1/2 pr-2">
