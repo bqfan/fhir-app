@@ -159,7 +159,10 @@
         "listUnknownPackages": false,
         "exclude": [
           "react-native-restart",
-          "i18next"
+          "i18next",
+          "@fortawesome/fontawesome-svg-core",
+          "@fortawesome/free-regular-svg-icons",
+          "@fortawesome/free-solid-svg-icons"
         ]
       }
     },
