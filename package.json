@@ -43,6 +43,10 @@
   },
   "dependencies": {
     "@expo/metro-runtime": "^4.0.1",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-native-fontawesome": "^0.3.2",
     "@gluestack-ui/button": "^1.0.13",
     "@gluestack-ui/icon": "^0.1.25",
     "@gluestack-ui/nativewind-utils": "^1.0.26",
@@ -67,7 +71,7 @@
     "expo-image": "~2.0.6",
     "expo-linking": "~7.0.5",
     "expo-localization": "~16.0.1",
-    "expo-router": "~4.0.19",
+    "expo-router": "~4.0.21",
     "expo-splash-screen": "~0.29.22",
     "expo-status-bar": "~2.0.1",
     "expo-system-ui": "~4.0.8",
@@ -155,7 +159,10 @@
         "listUnknownPackages": false,
         "exclude": [
           "react-native-restart",
-          "i18next"
+          "i18next",
+          "@fortawesome/fontawesome-svg-core",
+          "@fortawesome/free-regular-svg-icons",
+          "@fortawesome/free-solid-svg-icons"
         ]
       }
     },
