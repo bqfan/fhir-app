@@ -1,13 +1,6 @@
 import type { Organization } from 'fhir/r4';
 import { ScrollView, View } from 'react-native';
-
 import { Text } from '@/components/ui/text';
-
-// const formatDate = (dateString: string | null) => {
-//   if (!dateString) return 'N/A';
-//   const date = new Date(dateString);
-//   return `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getFullYear()}`;
-// };
 
 interface OrganizationScreenProps {
   organization: Organization;
@@ -33,25 +26,6 @@ const OrganizationScreen = ({ organization }: OrganizationScreenProps) => {
             </Text>
           </View>
 
-          {/* <View className="w-1/2 pl-2">
-            <Text className="text-sm text-gray-500 dark:text-gray-400">
-              Given Name
-            </Text>
-            <Text className="text-base font-medium dark:text-gray-200">
-              {practitioner?.name?.[0]?.given}
-            </Text>
-          </View> */}
-
-          {/* Gender */}
-          {/* <View className="w-1/2 pr-2">
-            <Text className="text-sm text-gray-500 dark:text-gray-400">
-              Gender
-            </Text>
-            <Text className="text-base dark:text-gray-300">
-              {practitioner?.gender?.toUpperCase() || 'N/A'}
-            </Text>
-          </View> */}
-
           {/* Identifier */}
           <View className="w-1/2 pl-2">
             <Text className="text-sm text-gray-500 dark:text-gray-400">
@@ -60,10 +34,10 @@ const OrganizationScreen = ({ organization }: OrganizationScreenProps) => {
             <Text className="text-base dark:text-gray-300">
               {organization?.identifier?.[0]?.value || 'N/A'}
             </Text>
-          </View>
+          </View> */}
 
-          {/* Identifier */}
-          <View className="w-1/2 pl-2">
+          {/* Type */}
+          <View className="w-1/2 pr-2">
             <Text className="text-sm text-gray-500 dark:text-gray-400">
               Type
             </Text>
@@ -73,7 +47,7 @@ const OrganizationScreen = ({ organization }: OrganizationScreenProps) => {
           </View>
 
           {/* Address */}
-          <View className="w-1/2 pr-2">
+          <View className="w-1/2 pl-2">
             <Text className="text-sm text-gray-500 dark:text-gray-400">
               Address
             </Text>
@@ -91,7 +65,7 @@ const OrganizationScreen = ({ organization }: OrganizationScreenProps) => {
           </View>
 
           {/* Phone */}
-          <View className="w-1/2 pl-2">
+          <View className="w-1/2 pr-2">
             <Text className="text-sm text-gray-500 dark:text-gray-400">
               Phone
             </Text>
@@ -101,7 +75,7 @@ const OrganizationScreen = ({ organization }: OrganizationScreenProps) => {
           </View>
 
           {/* Status */}
-          <View className="w-1/2 pr-2">
+          <View className="w-1/2 pl-2">
             <Text className="text-sm text-gray-500 dark:text-gray-400">
               Status
             </Text>
