@@ -1,5 +1,6 @@
 import type { Organization } from 'fhir/r4';
 import { ScrollView, View } from 'react-native';
+
 import { Text } from '@/components/ui/text';
 
 interface OrganizationScreenProps {
@@ -34,7 +35,7 @@ const OrganizationScreen = ({ organization }: OrganizationScreenProps) => {
             <Text className="text-base dark:text-gray-300">
               {organization?.identifier?.[0]?.value || 'N/A'}
             </Text>
-          </View> */}
+          </View>
 
           {/* Type */}
           <View className="w-1/2 pr-2">

@@ -10,7 +10,7 @@ import { Spinner } from '@/components/ui/spinner';
 import { Text } from '@/components/ui/text';
 
 /* eslint-disable max-lines-per-function */
-const PractitionerList = () => {
+const OrganizationList = () => {
   const router = useRouter();
   const [organizations, setOrganizations] = useState<
     {
@@ -224,4 +224,4 @@ const PractitionerList = () => {
   );
 };
 
-export default PractitionerList;
+export default OrganizationList;

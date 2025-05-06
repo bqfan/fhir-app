@@ -48,7 +48,7 @@ export default function OrganizationDetails() {
           <Button
             //variant="ghost"
             className="self-start"
-            onPress={() => router.push('/organizationss')}
+            onPress={() => router.push('/organizations')}
           >
             <ButtonText>← Back to Organizations</ButtonText>
           </Button>
