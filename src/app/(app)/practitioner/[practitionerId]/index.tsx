@@ -2,12 +2,10 @@
 import { useMedplum } from '@medplum/react-hooks';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import type { Practitioner } from 'fhir/r4';
-import { useEffect, useState } from 'react';
-import { SafeAreaView, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
 
 import PractitionerScreen from '@/components/practitioner-screen';
-import { Button, ButtonText } from '@/components/ui/button';
-import { Spinner } from '@/components/ui/spinner';
+import { ActivityIndicator, Button, SafeAreaView, View } from '@/components/ui';
 
 /* eslint-disable max-lines-per-function */
 export default function PractitionerDetails() {
@@ -38,7 +36,7 @@ export default function PractitionerDetails() {
     loadData();
   }, [practitionerId, medplum]);
 
-  if (loading) return <Spinner />;
+  if (loading) return <ActivityIndicator />;
 
   return (
     <SafeAreaView className="w-full flex-1 items-center justify-center">
@@ -46,12 +44,10 @@ export default function PractitionerDetails() {
         {/* Back Button */}
         <View className="border-b border-gray-200 p-4 dark:border-gray-700">
           <Button
-            //variant="ghost"
             className="self-start"
+            label="← Back to Pratitioners"
             onPress={() => router.push('/practitioners')}
-          >
-            <ButtonText>← Back to Pratitioners</ButtonText>
-          </Button>
+          />
         </View>
 
         {practitioner ? (

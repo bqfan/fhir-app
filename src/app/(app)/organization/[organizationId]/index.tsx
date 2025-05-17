@@ -3,11 +3,9 @@ import { useMedplum } from '@medplum/react-hooks';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import type { Organization } from 'fhir/r4';
 import { useEffect, useState } from 'react';
-import { SafeAreaView, View } from 'react-native';
 
 import OrganizationScreen from '@/components/organization-screen';
-import { Button, ButtonText } from '@/components/ui/button';
-import { Spinner } from '@/components/ui/spinner';
+import { ActivityIndicator, Button, SafeAreaView, View } from '@/components/ui';
 
 /* eslint-disable max-lines-per-function */
 export default function OrganizationDetails() {
@@ -38,7 +36,7 @@ export default function OrganizationDetails() {
     loadData();
   }, [organizationId, medplum]);
 
-  if (loading) return <Spinner />;
+  if (loading) return <ActivityIndicator />;
 
   return (
     <SafeAreaView className="w-full flex-1 items-center justify-center">
@@ -46,12 +44,10 @@ export default function OrganizationDetails() {
         {/* Back Button */}
         <View className="border-b border-gray-200 p-4 dark:border-gray-700">
           <Button
-            //variant="ghost"
             className="self-start"
+            label="← Back to Organizations"
             onPress={() => router.push('/organizations')}
-          >
-            <ButtonText>← Back to Organizations</ButtonText>
-          </Button>
+          />
         </View>
 
         {organization ? (

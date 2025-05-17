@@ -3,10 +3,9 @@ import { FlashList } from '@shopify/flash-list';
 import { useRouter } from 'expo-router';
 import type { Organization } from 'fhir/r4';
 import React, { useEffect, useState } from 'react';
-import { Pressable, TextInput, View } from 'react-native';
+import { Pressable, TextInput } from 'react-native';
 
-import { Button, ButtonText } from '@/components/ui/button';
-import { Spinner } from '@/components/ui/spinner';
+import { ActivityIndicator, Button, View } from '@/components/ui';
 import { Text } from '@/components/ui/text';
 
 /* eslint-disable max-lines-per-function */
@@ -156,7 +155,7 @@ const OrganizationList = () => {
 
       {loading ? (
         <View className="items-center py-4">
-          <Spinner
+          <ActivityIndicator
             size="small"
             className="size-8 text-gray-500 dark:text-gray-400"
           />
@@ -201,22 +200,20 @@ const OrganizationList = () => {
           {/* Pagination Controls */}
           <View className="flex-row items-center justify-between py-4">
             <Button
+              className="self-start"
+              label="Previous"
               onPress={handlePreviousPage}
-              isDisabled={currentPage === 1 || loading}
-            >
-              <ButtonText>Previous</ButtonText>
-            </Button>
+              disabled={currentPage === 1 || loading}
+            />
             <Text className="text-gray-900 dark:text-gray-100">
               Page {currentPage}
             </Text>
             <Button
+              className="self-start"
+              label="Next"
               onPress={handleNextPage}
-              isDisabled={
-                organizations.length < organizationsPerPage || loading
-              }
-            >
-              <ButtonText>Next</ButtonText>
-            </Button>
+              disabled={organizations.length < organizationsPerPage || loading}
+            />
           </View>
         </>
       )}

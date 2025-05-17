@@ -6,15 +6,13 @@ import { MedplumProvider } from '@medplum/react-hooks';
 import { ThemeProvider } from '@react-navigation/native';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
-import React from 'react';
 import { StyleSheet } from 'react-native';
 import FlashMessage from 'react-native-flash-message';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { KeyboardProvider } from 'react-native-keyboard-controller';
 
 import { APIProvider, medplum_client } from '@/api';
-import { GluestackUIProvider } from '@/components/ui/gluestack-ui-provider';
-import { hydrateAuth, loadSelectedTheme, useSelectedTheme } from '@/lib';
+import { hydrateAuth, loadSelectedTheme } from '@/lib';
 import { useThemeConfig } from '@/lib/use-theme-config';
 
 export { ErrorBoundary } from 'expo-router';
@@ -47,7 +45,6 @@ export default function RootLayout() {
 
 function Providers({ children }: { children: React.ReactNode }) {
   const theme = useThemeConfig();
-  const { selectedTheme } = useSelectedTheme();
 
   return (
     <GestureHandlerRootView
@@ -56,16 +53,14 @@ function Providers({ children }: { children: React.ReactNode }) {
     >
       <KeyboardProvider>
         <ThemeProvider value={theme}>
-          <GluestackUIProvider mode={selectedTheme}>
-            <APIProvider>
-              <MedplumProvider medplum={medplum_client}>
-                <BottomSheetModalProvider>
-                  {children}
-                  <FlashMessage position="top" />
-                </BottomSheetModalProvider>
-              </MedplumProvider>
-            </APIProvider>
-          </GluestackUIProvider>
+          <APIProvider>
+            <MedplumProvider medplum={medplum_client}>
+              <BottomSheetModalProvider>
+                {children}
+                <FlashMessage position="top" />
+              </BottomSheetModalProvider>
+            </MedplumProvider>
+          </APIProvider>
         </ThemeProvider>
       </KeyboardProvider>
     </GestureHandlerRootView>

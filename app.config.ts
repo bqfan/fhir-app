@@ -32,7 +32,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   orientation: 'portrait',
   icon: './assets/images/fhir-icon.png',
   userInterfaceStyle: 'automatic',
-  newArchEnabled: true,
   updates: {
     fallbackToCacheTimeout: 0,
   },
