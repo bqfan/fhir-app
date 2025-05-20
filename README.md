@@ -46,7 +46,8 @@ pnpm android
 ## 📸 Screen shots
 
 ### Splash Screen
-<img src="https://github.com/user-attachments/assets/e2884993-dc80-4ad5-b1b5-3d6e460266ea" alt="Splash Screen" width="100" />
+<img src="https://github.com/user-attachments/assets/e2884993-dc80-4ad5-b1b5-3d6e460266ea" alt="Splash Screen" width="250" />
+<img src="https://github.com/user-attachments/assets/ef6cd8b0-b2f3-47cd-adc4-acf14eccbb81" alt="Splash Screen" width="250" />
 ![Simulator Screenshot - iPhone 16 Pro - 2025-05-20 at 15 04 15](https://github.com/user-attachments/assets/e2884993-dc80-4ad5-b1b5-3d6e460266ea)
 ![Screenshot_1747742689](https://github.com/user-attachments/assets/ef6cd8b0-b2f3-47cd-adc4-acf14eccbb81)
 
