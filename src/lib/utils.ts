@@ -5,18 +5,24 @@ export function openLinkInBrowser(url: string) {
   Linking.canOpenURL(url).then((canOpen) => canOpen && Linking.openURL(url));
 }
 
-type WithSelectors<S> = S extends { getState: () => infer T }
-  ? S & { use: { [K in keyof T]: () => T[K] } }
-  : never;
+type WithSelectors<
+  S extends UseBoundStore<StoreApi<T>>,
+  T extends object,
+> = S & {
+  use: {
+    [K in keyof T]: () => T[K];
+  };
+};
 
-export const createSelectors = <S extends UseBoundStore<StoreApi<object>>>(
-  _store: S
-) => {
-  let store = _store as WithSelectors<typeof _store>;
-  store.use = {};
-  for (let k of Object.keys(store.getState())) {
-    (store.use as any)[k] = () => store((s) => s[k as keyof typeof s]);
+export const createSelectors = <T extends object>(
+  store: UseBoundStore<StoreApi<T>>
+): WithSelectors<typeof store, T> => {
+  const typedStore = store as WithSelectors<typeof store, T>;
+  typedStore.use = {} as any;
+
+  for (const key of Object.keys(store.getState()) as (keyof T)[]) {
+    typedStore.use[key] = () => store((s) => s[key]);
   }
 
-  return store;
+  return typedStore;
 };
