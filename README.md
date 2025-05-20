@@ -2,8 +2,6 @@
   <img alt="logo" src="./assets/images/fhir-icon.png" width="124px" style="border-radius:10px"/><br/>
 FHIR React Native App </h1>
 
-> This Project is based on [Obytes starter](https://starter.obytes.com)
-
 ## Requirements
 
 - [React Native dev environment ](https://reactnative.dev/docs/environment-setup)
