@@ -50,7 +50,7 @@ pnpm android
 <img src="https://github.com/user-attachments/assets/ef6cd8b0-b2f3-47cd-adc4-acf14eccbb81" alt="Splash Screen" width="250" />
 
 ### Onboarding Screen
-<img src="https://github.com/user-attachments/assets/6a504da8-2252-432f-8234-ca76b8374bd1" alt="Onboarding Screen" width="250" />
+<img src="https://github.com/user-attachments/assets/6b1ed068-59e6-4a34-9e74-538a9d3e5127" alt="Onboarding Screen" width="250" />
 <img src="https://github.com/user-attachments/assets/3b9dad67-7f9a-4168-b316-d127047a949d" alt="Onboarding Screen" width="250" />
 
 ### Login Screen
