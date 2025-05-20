@@ -86,8 +86,8 @@ pnpm android
 <img src="https://github.com/user-attachments/assets/94b9aa26-ea1b-48be-81ff-5844db2c404b" alt="Organization Screen" width="250" />
 
 ### Settings Screen
-<img src="https://github.com/user-attachments/assets/c4974996-2c3e-464b-a909-d764cce71110" alt="Settings Screen" width="250" />
 <img src="https://github.com/user-attachments/assets/1cf7633a-2b95-4b75-83dc-e58ffa2337e4" alt="Settings Screen" width="250" />
+<img src="https://github.com/user-attachments/assets/c4974996-2c3e-464b-a909-d764cce71110" alt="Settings Screen" width="250" />
 <img src="https://github.com/user-attachments/assets/90b83d8e-01c5-49aa-9d38-5049ce0b3465" alt="Settings Screen" width="250" />
 
 ### Dark Theme Screen
