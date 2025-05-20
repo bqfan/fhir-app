@@ -5,13 +5,11 @@
   "settings": {
     "about": "حول التطبيق ",
     "app_name": "اسم التطبيق",
+    "arabic": "عربي",
+    "english": "إنجليزي",
     "generale": "عام",
     "github": "جيثب",
-    "language": {
-      "arabic": "عربي",
-      "english": "إنجليزي",
-      "title": "لغة"
-    },
+    "language": "لغة",
     "links": "الروابط",
     "logout": "تسجيل خروج",
     "more": "أكثر",

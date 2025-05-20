@@ -8,12 +8,10 @@ import type {
   Observation,
   Patient,
 } from 'fhir/r4';
-import { useEffect, useState } from 'react';
-import { SafeAreaView, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
 
 import PatientScreen from '@/components/patient-screen';
-import { Button, ButtonText } from '@/components/ui/button';
-import { Spinner } from '@/components/ui/spinner';
+import { ActivityIndicator, Button, SafeAreaView, View } from '@/components/ui';
 
 interface ExtendedDiagnosticReport extends DiagnosticReport {
   observations?: Observation[];
@@ -86,7 +84,7 @@ export default function PatientDetails() {
     loadData();
   }, [patientId, medplum]);
 
-  if (loading) return <Spinner />;
+  if (loading) return <ActivityIndicator />;
 
   return (
     <SafeAreaView className="w-full flex-1 items-center justify-center">
@@ -94,12 +92,10 @@ export default function PatientDetails() {
         {/* Back Button */}
         <View className="border-b border-gray-200 p-4 dark:border-gray-700">
           <Button
-            //variant="ghost"
             className="self-start"
+            label="← Back to Patients"
             onPress={() => router.back()}
-          >
-            <ButtonText>← Back to Patients</ButtonText>
-          </Button>
+          />
         </View>
 
         {patient ? (
