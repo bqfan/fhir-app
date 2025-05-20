@@ -55,7 +55,7 @@ pnpm android
 
 ### Login Screen
 <img src="https://github.com/user-attachments/assets/b104ce47-de0d-431a-95c6-d9324ee6739f" alt="Login Screen" width="250" />
-<img src="https://github.com/user-attachments/assets/7d3bfb5a-df40-4e46-86b5-f32978753310" alt="Login Screen" width="250" />
+<img src="https://github.com/user-attachments/assets/b4d6e270-d785-4f9c-8290-97e612b79338" alt="Login Screen" width="250" />
 
 ### Patient List
 <img src="https://github.com/user-attachments/assets/eb4b4c26-2d34-42a3-9f7c-2dc7ae7044fa" alt="Patient List" width="250" />
