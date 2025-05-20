@@ -66,8 +66,6 @@ pnpm android
 <img src="https://github.com/user-attachments/assets/b1f39359-2c67-44b0-a2e0-fe0507824cdf" alt="Patient Details" width="250" />
 <img src="https://github.com/user-attachments/assets/43e271ad-1a52-464a-9813-c6ef4947d936" alt="Patient Details" width="250" />
 <img src="https://github.com/user-attachments/assets/4869094d-160f-43b0-8430-351ca402e390" alt="Patient Details" width="250" />
-<img src="https://github.com/user-attachments/assets/42ce01d8-51ea-4a8f-a44b-3971e2921bdf" alt="Patient Details" width="250" />
-<img src="https://github.com/user-attachments/assets/adfe2d16-0c06-4898-8513-63328c49cd5e" alt="Patient Details" width="250" />
 
 ### Diagnostic Report
 <img src="https://github.com/user-attachments/assets/d0fbffd2-1133-4841-abbc-0733d548ddd6" alt="Diagnostic Report" width="250" />
