@@ -43,7 +43,7 @@ To run the app on Android
 pnpm android
 ```
 
-## 📸 Screen shots
+## 📸 Screen shots (iOS simulator and Android Studio)
 
 ### Splash Screen
 <img src="https://github.com/user-attachments/assets/e2884993-dc80-4ad5-b1b5-3d6e460266ea" alt="Splash Screen" width="250" />
